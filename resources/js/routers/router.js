@@ -13,18 +13,15 @@ var giteway = giteway || {};
 		},
 
 		init: function( param ) {
-			console.log("the router welcomes you to giteway");
 		},
 
 		searchRepos: function( keyword ) {
-
-			giteway.Repositories.search(keyword);
-			console.log("the router searchRepos");
+			giteway.collections.repositories.search(keyword);
 		}
 		
 	});
 
-	giteway.gitewayRouter = new Router();
+	giteway.router = new Router();
 
 	Backbone.history.start();
 

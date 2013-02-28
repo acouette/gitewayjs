@@ -12,21 +12,30 @@
 				<input type="text" id="keyword" placeholder="keyword" autofocus/>
 				<input type="button" value="search" id="search-button"/>
 			</div>
-			<div class="result-list" value="search">
-				<table>
-					<thead>
-						<th>Repository</th>
-						<th>Owner</th>
-						<th>Description</th>
-					</thead>
-					<tbody id="repo-list">
-						
-					</tbody>
-				</table>
+			<div class="result-list" id="result-list">
+				
 			</div>
 		</div>
 
-		<script type="text/template" id="repositories-template"></script>
+		<script type="text/template" id="repositories-template">
+			
+				<td><%= name %></td>
+				<td><%= username %></td>
+				<td><%=description%></td>
+		</script>
+
+		<script type="text/template" id="repositories-header-template">
+			
+			<table>
+				<thead>
+					<th class="name">Repository</th>
+					<th class="owner">Owner</th>
+					<th class="desc">Description</th>
+				</thead>
+				<tbody id="repo-list">
+					
+				</tbody>
+		</script>
 
 
 		<script src="resources/js/lib/jquery-1.9.1.min.js"></script>
@@ -37,9 +46,9 @@
 
 		<script src="resources/js/models/repository.js"></script>
 		<script src="resources/js/collections/repositories.js"></script>
-		<script src="resources/js/routers/router.js"></script>
 		<script src="resources/js/views/app.js"></script>
 		<script src="resources/js/views/repositories.js"></script>
+		<script src="resources/js/routers/router.js"></script>
 		<script src="resources/js/app.js"></script>
 
 

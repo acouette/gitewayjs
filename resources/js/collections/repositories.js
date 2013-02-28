@@ -1,5 +1,5 @@
 var giteway = giteway || {};
-
+giteway.collections = giteway.collections || {};
 
 var GITHUB_ROOT = "https://api.github.com";
 var GITHUB_SEARCH_REPO = "/legacy/repos/search/";
@@ -11,25 +11,25 @@ var GITHUB_SEARCH_REPO = "/legacy/repos/search/";
 
 	var Repositories = Backbone.Collection.extend({
 
-		model: giteway.Repository,
+		model: giteway.models.Repository,
 
-		// Save all of the todo items under the `"todos"` namespace.
-		//localStorage: new Store('repositories-backbone')
-		
+		keyword: "",
 
 		search: function(keyword){
-			this.url = GITHUB_ROOT+GITHUB_SEARCH_REPO+keyword;
+			this.keyword = keyword;
+			this.url = GITHUB_ROOT+GITHUB_SEARCH_REPO+encodeURIComponent(keyword);
 			this.fetch({
-				dataType: "jsonp",
-				success: function(data){
-					console.log(data);
-				}
+				dataType: "jsonp"
 			});
-		}
+		},
+
+		parse: function(response) {
+	        return response.data.repositories;
+	    }
 
 	});
 
-	giteway.Repositories = new Repositories();
+	giteway.collections.repositories = new Repositories();
 
 }());
 

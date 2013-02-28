@@ -65,6 +65,7 @@ input[type="text"]{
 
 	border-radius:30px;
 	border-collapse:separate;
+	table-layout:fixed;
 }
 
 .result-list th{
@@ -73,7 +74,7 @@ input[type="text"]{
 }
 
 tr.even {
-	background: #F4F4EE;
+	background: #F4F0EE;
 }
 
 table tr:last-child td:first-child {
@@ -90,4 +91,16 @@ table th:first-child {
 
 table th:last-child {
     border-top-right-radius:10px
+}
+
+th.name{
+	width: 30%;
+}
+
+th.owner{
+	width: 30%;
+}
+
+th.desc{
+	width: 40%;
 }

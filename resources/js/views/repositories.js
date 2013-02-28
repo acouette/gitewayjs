@@ -1,23 +1,28 @@
 var giteway = giteway || {};
-
+giteway.views = giteway.views || {};
 
 
 (function() {
 
 	"use strict";
 
-	giteway.RepositoriesView = Backbone.View.extend({
+	giteway.views.Repositories = Backbone.View.extend({
 	
 		tagName: "tr",
 
-		template: _.template('text!/templates/search-repository.html'),
+		className: function(){
+			return (!!(Number(this.model.cid.slice(1))%2)) ? "even" : "";
+		},
+
+		template: _.template($('#repositories-template').html()),
 
 		events: {
 
 		},
 
 		render: function() {
-
+			this.$el.html(this.template(this.model.toJSON()));
+			return this;
 		}
 		
 		

@@ -1,12 +1,14 @@
 var giteway = giteway || {};
-
+giteway.models = giteway.models || {};
 
 
 (function() {
 
 	"use strict";
 
-	giteway.Repository = Backbone.Model.extend({
+
+
+	giteway.models.Repository = Backbone.Model.extend({
 
 		
 	});
