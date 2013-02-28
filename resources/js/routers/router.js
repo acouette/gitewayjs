@@ -1,7 +1,5 @@
 var giteway = giteway || {};
 
-
-
 (function() {
 
 	"use strict";
@@ -20,8 +18,7 @@ var giteway = giteway || {};
 
 		searchRepos: function( keyword ) {
 
-			giteway.Repositories.url = GITHUB_ROOT+GITHUB_SEARCH_REPO+keyword;
-			giteway.Repositories.fetch();
+			giteway.Repositories.search(keyword);
 			console.log("the router searchRepos");
 		}
 		

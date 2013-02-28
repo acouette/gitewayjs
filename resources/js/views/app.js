@@ -18,6 +18,9 @@ var giteway = giteway || {};
 
 		initialize: function() {
 			this.$input = this.$("#keyword");
+
+
+			this.listenTo(giteway.Repositories, 'change', this.addOne);
 		},
 
 		render: function() {
@@ -45,6 +48,12 @@ var giteway = giteway || {};
 			}
 
 			this.search();
+		},
+
+		addOne: function(repo) {
+			console.log("new repo !");
+			var view = new giteway.TodoView({ model: repo });
+			$('#repo-list').append(view.render().el);
 		}
 
 		

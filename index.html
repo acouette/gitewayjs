@@ -19,23 +19,8 @@
 						<th>Owner</th>
 						<th>Description</th>
 					</thead>
-					<tbody>
-						<tr>
-							<td>link 1</td>
-							<td>ownner 1</td>
-							<td>Desc 1</td>
-						</tr>
-
-						<tr class="even">
-							<td>link 1</td>
-							<td>ownner 1</td>
-							<td>Desc 1</td>
-						</tr>
-						<tr>
-							<td>link 1</td>
-							<td>ownner 1</td>
-							<td>Desc 1</td>
-						</tr>
+					<tbody id="repo-list">
+						
 					</tbody>
 				</table>
 			</div>
@@ -45,13 +30,13 @@
 
 
 		<script src="resources/js/lib/jquery-1.9.1.min.js"></script>
-		<script src="resources/js/lib/underscore-min.js"></script>
-		<script src="resources/js/lib/backbone-min.js"></script>
+		<script src="resources/js/lib/underscore.js"></script>
+		<script src="resources/js/lib/backbone.js"></script>
 		<script src="resources/js/lib/backbone.localStorage.js"></script>
 		
 
-		<script src="resources/js/collections/repositories.js"></script>
 		<script src="resources/js/models/repository.js"></script>
+		<script src="resources/js/collections/repositories.js"></script>
 		<script src="resources/js/routers/router.js"></script>
 		<script src="resources/js/views/app.js"></script>
 		<script src="resources/js/views/repositories.js"></script>

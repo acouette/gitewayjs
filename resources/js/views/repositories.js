@@ -10,6 +10,8 @@ var giteway = giteway || {};
 	
 		tagName: "tr",
 
+		template: _.template('text!/templates/search-repository.html'),
+
 		events: {
 
 		},
