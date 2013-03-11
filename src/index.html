@@ -1,0 +1,84 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>giteway</title>
+		<link rel="stylesheet" type="text/css" href="resources/style/style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<div id="header" class="header">
+		</div>
+		<div id="container" class="container">
+			<div class="search-form">
+				<input type="text" id="keyword" placeholder="keyword" autofocus/>
+				<input type="button" value="search" id="search-button"/>
+			</div>
+			<div class="result" id="result">
+				
+			</div>
+		</div>
+
+		<script type="text/template" id="repositories-template">
+				<td><a href="#repo/<%= username %>/<%= name %>"><%= name %></a></td>
+				<td><%= username %></td>
+				<td><%=description%></td>
+		</script>
+
+		<script type="text/template" id="repositories-header-template">
+			<table>
+				<thead>
+					<th class="name">Repository</th>
+					<th class="owner">Owner</th>
+					<th class="desc">Description</th>
+				</thead>
+				<tbody id="repo-list">
+					
+				</tbody>
+			</table>
+		</script>
+
+		<script type="text/template" id="collaboration-template">
+				<h3>Committers'' activity</h3>
+				<p>Based on the last&nbsp;<%= count %>&nbsp;commits.</p>
+				<div id="collaboration-chart"></div>
+		</script>
+
+		<script type="text/template" id="timeline-template">
+			<div id="timeline">
+				<h3>Timeline</h3>
+				<p>
+				Number of commits displayed :&nbsp; <%= count %><br/>
+				Total timeline duration :&nbsp;<%= (step/36000000).toFixed(2) %>&nbsp;day(s)<br/>
+				Interval duration :&nbsp;<%= (range/36000000).toFixed(2) %> &nbsp;day(s)</p>
+				<div id="timeline-chart" ></div>
+			</div>
+		</script>
+
+		<script type="text/template" id="repo-template">
+			<h2><%= name %></h2>
+				<p>Owner : <%= owner %><br/></p>
+			</div>
+			<div id="btns-stats">
+				<input type="button" value="Timeline" id="btn-timeline"/>
+				<input type="button" value="Collaboration" id="btn-collaboration"/>
+				<input type="button" value="Committers" id="btn-commiter"/>
+			</div>
+			<div id="stat">
+
+			</div>
+
+		</script>
+
+
+		<script src="resources/lib/jquery-1.9.1.min.js"></script>
+		<script src="resources/lib/underscore.js"></script>
+		<script src="resources/lib/backbone.js"></script>
+		<script src="resources/lib/jquery.flot.min.js"></script>
+		<script src="resources/lib/jquery.flot.pie.min.js"></script>
+		
+
+		<script src="resources/gitewayjs.min.js"></script>
+
+
+	</body>
+</html>
