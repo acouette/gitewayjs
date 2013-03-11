@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js.map","sources":["src/resources/js/index.js"],"names":["$","giteway","views","search","Search","model","collections","repositories","Backbone","history","start"],"mappings":"AAAAA,EAAE,WAEDC,QAAQC,MAAMC,OAAS,GAAIF,SAAQC,MAAME,QACxCC,MAAOJ,QAAQK,YAAYC,eAG5BC,SAASC,QAAQC"}
